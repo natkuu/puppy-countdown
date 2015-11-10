@@ -4,33 +4,36 @@
 	<title></title>
 </head>
 <body>
-
+<h1>Puppy countdown starts!!</h1>
+<div>This countdown app will help you anticipate arrival of your puppy!</div>
 <div id="time">
   <div>
     <span class="days"></span>
-    <div>Days</div>
+    <span>Days</span>
   </div>
   <div>
     <span class="hours"></span>
-    <div>Hours</div>
+    <span>Hours</span>
   </div>
   <div>
     <span class="minutes"></span>
-    <div>Minutes</div>
+    <span>Minutes</span>
   </div>
   <div>
     <span class="seconds"></span>
-    <div>Seconds</div>
+    <span>Seconds</span>
   </div>
 </div>
 <script>
-
+window.onload = function(){
 function getRemaningTime(endTime) {
 		var count = Date.parse(endTime) - Date.parse(new Date());
 		var seconds = Math.floor( (count/1000) % 60 );
 		var minutes = Math.floor( (count/1000/60) % 60 );
-		var hours = Math.floor( (count/1000*60*60) % 24 );
-		var days = Math.floor( (count/1000*60*60*24) );
+		var hours = Math.floor( (count/(1000*60*60)) % 24 );
+		var days = Math.floor( count/(1000*60*60*24) );
+
+
 		return {
 			'countdown': count,
 			'days': days,
@@ -42,18 +45,18 @@ function getRemaningTime(endTime) {
 
 	function initCountdown(id, endTime) {
 		var countdownClock = document.getElementById(id);
-		var daysCount = countdownClock.getElementsByClassName('days'); 
-		var hoursCount = countdownClock.getElementsByClassName('hours');
-		var minutesCount = countdownClock.getElementsByClassName('minutes');
-		var secondsCount = countdownClock.getElementsByClassName('seconds');
+		var daysCount = countdownClock.querySelector('.days'); 
+		var hoursCount = countdownClock.querySelector('.hours');
+		var minutesCount = countdownClock.querySelector('.minutes');
+		var secondsCount = countdownClock.querySelector('.seconds');
 
 		function updateCountdownClock(){
 			var count = getRemaningTime(endTime);
 
 			daysCount.innerHTML = count.days;
-			hoursCount.innerHTML = ('0', + count.hours).slice(-2);
-			minutesCount.innerHTML = ('0', + count.minutes).slice(-2);
-			secondsCount.innerHTML = ('0', + count.seconds).slice(-2);
+			hoursCount.innerHTML = count.hours;
+			minutesCount.innerHTML = count.minutes;
+			secondsCount.innerHTML = count.seconds;
 
 			if(count.total <= 0){
 				clearInterval(timeInterval);
@@ -64,9 +67,9 @@ function getRemaningTime(endTime) {
 	}
 
 
-	var puppyPickUpDate = '2015, 11, 28, 10, 0, 0';
+	var puppyPickUpDate = 'November 28 2015 10:00:50';
 	initCountdown('time', puppyPickUpDate);	
-
+}
 </script>
 
 
