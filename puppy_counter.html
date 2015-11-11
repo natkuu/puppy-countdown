@@ -2,26 +2,26 @@
 <html>
 <head>
 	<title></title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css" />
 </head>
 <body>
 <h1>Puppy countdown starts!!</h1>
 <div>This countdown app will help you anticipate arrival of your puppy!</div>
-<div id="time">
+<div id="time" class="box">
   <div>
-    <span class="days"></span>
-    <span>Days</span>
+    <div class="counter-box counter-box__first">
+    	<span class="days count"></span><div>Days</div>
+    </div>
   </div>
   <div>
-    <span class="hours"></span>
-    <span>Hours</span>
+    <div class="counter-box counter-box__sd"><span class="hours count"></span> <div>Hours</div></div>
   </div>
   <div>
-    <span class="minutes"></span>
-    <span>Minutes</span>
+    <div class="counter-box counter-box__td"><span class="minutes count"></span> <div>Minutes</div></div>
   </div>
   <div>
-    <span class="seconds"></span>
-    <span>Seconds</span>
+    <div class="counter-box counter-box__frth"><span class="seconds count"></span> <div>Seconds</div></div>
+
   </div>
 </div>
 <script>

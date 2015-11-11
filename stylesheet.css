@@ -1,0 +1,48 @@
+body {
+	background: #FFFAD5;
+	font-family: sans-serif;
+}
+
+.box {
+	border: 2px solid #105B63;
+	height: 100%;
+	padding: 25%;
+	/* float: left; */
+	vertical-align: middle;
+}
+.counter-box {
+	height: 75px;
+	margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+.counter-box__first {
+	border: 1px solid red;
+
+}
+.counter-box__sd {
+	/*width: 75px;*/
+	/*height: 75px;*/
+	border: 1px solid blue;
+	/*margin: 0 auto;*/
+	/*float: left;*/
+}
+.counter-box__td {
+	/*width: 75px;*/
+	/*height: 75px;*/
+	border: 1px solid green;
+	/*margin: 0 auto;*/
+	/*float: left;*/
+}
+
+.counter-box__frth{
+	/*width: 75px;*/
+	/*height: 75px;*/
+	border: 1px solid black;
+	/*margin: 0 auto;*/
+	/*float: left;*/
+}
+
+.count {
+	font-size: 30px;
+}
